@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "434009662467",
+    "project_id": "cs4080-20205-dart",
+    "storage_bucket": "cs4080-20205-dart.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434009662467:android:41f098da74bef3b9bc5a36",
+        "android_client_info": {
+          "package_name": "com.example.capstone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFFfSu5iA3_xZj7ukkQSUIaoGjarqaREE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
