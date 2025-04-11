@@ -47,7 +47,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA1usO4HPlnBpAPzV1lzJf2DI2_1jVNMzQ',
+    apiKey: '*',
     appId: '1:434009662467:web:4f86dcbb7e623440bc5a36',
     messagingSenderId: '434009662467',
     projectId: 'cs4080-20205-dart',
@@ -56,7 +56,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCFFfSu5iA3_xZj7ukkQSUIaoGjarqaREE',
+    apiKey: '*',
     appId: '1:434009662467:android:41f098da74bef3b9bc5a36',
     messagingSenderId: '434009662467',
     projectId: 'cs4080-20205-dart',
@@ -64,7 +64,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyA1usO4HPlnBpAPzV1lzJf2DI2_1jVNMzQ',
+    apiKey: '*',
     appId: '1:434009662467:web:207f1b57cc770618bc5a36',
     messagingSenderId: '434009662467',
     projectId: 'cs4080-20205-dart',
