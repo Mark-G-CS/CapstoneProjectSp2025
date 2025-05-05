@@ -45,6 +45,3 @@ app.*.map.json
 /android/app/release
 
 
-# Ignore Flutter generated files
-/linux/flutter/
-/windows/flutter/
