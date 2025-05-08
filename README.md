@@ -21,6 +21,9 @@ samples, guidance on mobile development, and a full API reference.
 `flutter pub get`
 Fetches and installs all the dependencies specified in the pubspec.yaml
 
+`flutter pub run build_runner build`
+Runs code generation to create/update auto-generated Dart files (like .g.dart files) 
+
 `flutter run`
 Compiles, builds, and launches the flutter app
 
