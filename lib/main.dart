@@ -1,9 +1,27 @@
+//main.dart
 import 'package:flutter/material.dart';
+
+import 'package:hive_flutter/hive_flutter.dart';
+import 'models/transaction.dart';
+//import 'models/transaction.g.dart';
+import 'screens/home_screen.dart';
+
+//Firebase Imports (not used right now)
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-void main()  {
+void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
+
+  // initialize hive
+  await Hive.initFlutter();
+  // register the TransactionAdapter
+  Hive.registerAdapter(TransactionAdapter());
+
+  // open the hive box
+  await Hive.openBox('transactions');
+
   runApp(const MyApp());
 }
 
@@ -31,14 +49,23 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
         useMaterial3: true,
+        appBarTheme: AppBarTheme( // Example customization
+          backgroundColor: Colors.blueAccent,
+          foregroundColor: Colors.white,
+          elevation: 4,
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const ExpenseHomeScreen(), // the main home screen
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
+
+
+/*
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -125,4 +152,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}
+}*/
