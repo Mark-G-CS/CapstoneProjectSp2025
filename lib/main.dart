@@ -1,29 +1,36 @@
-//main.dart
+// main.dart
 import 'package:flutter/material.dart';
-
 import 'package:hive_flutter/hive_flutter.dart';
+
 import 'models/transaction.dart';
-//import 'models/transaction.g.dart';
+import 'models/budget_interval.dart';
+import 'models/budget.dart';
+import 'models/budgetservice.dart';
 import 'screens/home_screen.dart';
 
-//Firebase Imports (not used right now)
-import 'firebase_options.dart';
-import 'package:firebase_core/firebase_core.dart';
-
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
-
-  // initialize hive
   await Hive.initFlutter();
-  // register the TransactionAdapter
-  Hive.registerAdapter(TransactionAdapter());
 
-  // open the hive box
-  await Hive.openBox('transactions');
+  // register adapters
+  Hive.registerAdapter(TransactionAdapter());
+  Hive.registerAdapter(BudgetIntervalAdapter());
+  Hive.registerAdapter(BudgetAdapter());
+
+  // open boxes one time
+  if (!Hive.isBoxOpen('transactions')) {
+    await Hive.openBox<Transaction>('transactions');
+  }
+  if (!Hive.isBoxOpen('budgets')) {
+    await Hive.openBox<Budget>('budgets');
+  }
+
+  // start the budget‐alert listener (it will now just grab the boxes—it won’t open them again)
+  await BudgetService().init();
 
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

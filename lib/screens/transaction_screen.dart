@@ -11,7 +11,7 @@ class TransactionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Retrieve the Hive box where transactions are stored
-    final transactionBox = Hive.box('transactions');
+    final Box<Transaction> transactionBox = Hive.box<Transaction>('transactions');
 
     return Scaffold(
       body: ValueListenableBuilder(

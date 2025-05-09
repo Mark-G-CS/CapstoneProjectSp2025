@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import '../models/transaction.dart';
+import 'package:flutter/foundation.dart';
+import '../models/budgetservice.dart';
+
 
 class AddTransactionScreen extends StatefulWidget {
   const AddTransactionScreen({super.key});
@@ -110,7 +113,7 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
                       isIncome: _isIncome,
                       date: _selectedDate,
                     );
-                    Hive.box('transactions').add(transaction);
+                    Hive.box<Transaction>('transactions').add(transaction);
 
                     // Reset form after submission
                     _category = 'Food';
@@ -147,4 +150,21 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
       });
     }
   }
+  @override
+  void initState() {
+    super.initState();
+    BudgetService().alertStream.listen((alert) {
+      final msg = alert.type == BudgetAlertType.nearingLimit
+          ? '⚠️ You’ve spent \$${alert.spent.toStringAsFixed(2)} of your '
+          '${alert. budget.category ?? 'all'} '
+          '${describeEnum(alert.budget.interval)} budget.'
+          : '🚨 You’ve exceeded your '
+          '${alert.budget.category ?? 'all'} '
+          '${describeEnum(alert.budget.interval)} budget!';
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(msg))
+      );
+    });
+  }
+
 }

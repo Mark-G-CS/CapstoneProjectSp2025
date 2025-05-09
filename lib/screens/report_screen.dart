@@ -13,7 +13,7 @@ class ReportsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final transactionBox = Hive.box('transactions');
+    final Box<Transaction> transactionBox = Hive.box<Transaction>('transactions');
     final List<Transaction> transactions =
     transactionBox.values.toList().cast<Transaction>();
 
