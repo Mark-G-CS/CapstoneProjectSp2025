@@ -1,19 +1,30 @@
-# Capstone
+# Capstone: Expense Tracker
+CS4080 - Spring 2025
 
-A new Flutter project.
 
-## Getting Started
+# Group:
 
-This project is a starting point for a Flutter application.
+Dart B
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Group Members:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Mark Gramata
+Matthew Lopez
+David Alvarado
+
+
+# Running The Flutter Application
+
+1. Clone the repo.
+
+2. Run `flutter pub get`.
+
+3. Launch on an android simulator (preferably with Android Studio) using `flutter run`.
+
+4. If you have code-gen annotations, run `flutter pub run build_runner build`.
+
+5. If you run into build artifacts issues, run `flutter clean` and repeat steps 2-4.
 
 
 # Useful Commands
@@ -28,19 +39,6 @@ Compiles, builds, and launches the flutter app
 Deletes the build/ and .dart_tool/ directories
 
 
-# Code Generation
+# Build Auto-Generated Code
 `flutter pub run build_runner build`
 Runs code generation to create/update auto-generated Dart files (.g.dart files) 
-
-
-# Running The App
-
-1. Clone the repo.
-
-2. Run `flutter pub get`.
-
-3. Launch on an android simulator with `flutter run`.
-
-4. If you have code-gen annotations, run `flutter pub run build_runner build`.
-
-5. If you run into build artifacts issues, run `flutter clean` and repeat steps 2–4.
