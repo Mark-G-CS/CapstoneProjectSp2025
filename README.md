@@ -1,17 +1,15 @@
 # Capstone: Expense Tracker
-CS4080 - Spring 2025
+CS4080 - Spring 2025  
 
 
-# Group:
+<ins>**Group:**</ins>  
+Dart B  
 
-Dart B
 
-
-# Group Members:
-
-Mark Gramata
-Matthew Lopez
-David Alvarado
+<ins>**Group Members:**</ins>  
+Mark Gramata  
+Matthew Lopez  
+David Alvarado  
 
 
 # Running The Flutter Application
